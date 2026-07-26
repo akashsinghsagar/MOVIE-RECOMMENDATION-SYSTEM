@@ -114,7 +114,7 @@ async def tmdb_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
     q["api_key"] = TMDB_API_KEY
 
     try:
-        async with httpx.AsyncClient(timeout=20) as client:
+        async with httpx.AsyncClient(timeout=60.0) as client:
             r = await client.get(f"{TMDB_BASE}{path}", params=q)
     except httpx.RequestError as e:
         raise HTTPException(
@@ -317,6 +317,15 @@ def health():
 
 
 # ---------- HOME FEED (TMDB) ----------
+
+@app.get("/")
+def root():
+    return {
+        "message": "Movie Recommendation API is running!",
+        "docs": "/docs"
+    }
+    
+    
 @app.get("/home", response_model=List[TMDBMovieCard])
 async def home(
     category: str = Query("popular"),

@@ -221,8 +221,8 @@ This project is licensed under the **MIT License**.
 
 **Akash Singh Sagar**
 
-- GitHub: https://github.com/your-username
-- LinkedIn: https://linkedin.com/in/your-profile
+- GitHub: https://github.com/akashsinghsagar
+- LinkedIn: https://linkedin.com/in/akashsinghsagar
 
 ---
 
